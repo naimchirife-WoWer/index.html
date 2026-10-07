@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Menos ruido, más aprendizaje — Centro Educativo Departamental Municipal de Ñemby</title>
   <meta name="description" content="Concientización sobre la polución sonora en aulas, cuidado de la percepción auditiva e inclusión de personas autistas en el Centro Educativo Departamental Municipal de Ñemby." />
+
   <style>
     :root{
       --bg: #0b1020;
@@ -21,6 +22,7 @@
 
     *{ box-sizing: border-box; }
     html, body { height: 100%; }
+
     body{
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -32,33 +34,67 @@
       line-height: 1.55;
     }
 
-    .container{ max-width: var(--max); margin: 0 auto; padding: 24px; }
+    .container{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px;
+    }
 
     header{
-      position: sticky; top: 0; z-index: 10;
+      position: sticky;
+      top: 0;
+      z-index: 10;
       backdrop-filter: blur(10px);
       background: linear-gradient(to bottom, rgba(11,16,32,.85), rgba(11,16,32,.55));
       border-bottom: 1px solid var(--line);
     }
+
     .nav{
-      display: flex; align-items: center; justify-content: space-between; gap: 18px;
-      padding: 14px 24px; max-width: var(--max); margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 24px;
+      max-width: var(--max);
+      margin: 0 auto;
     }
-    .brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
     .logo{
-      width: 38px; height: 38px; border-radius: 12px;
-      display: grid; place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
       background: linear-gradient(135deg, rgba(124,58,237,.9), rgba(34,197,94,.65));
       box-shadow: var(--shadow);
       border: 1px solid rgba(255,255,255,.16);
       font-size: 18px;
     }
-    .navlinks{ display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end; align-items:center; }
+
+    .navlinks{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+    }
+
     .navlinks a{
-      padding: 10px 12px; border-radius: 999px;
-      border: 1px solid transparent; color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
       text-decoration: none;
     }
+
     .navlinks a:hover{
       color: var(--text);
       border-color: var(--line);
@@ -77,7 +113,11 @@
       cursor: pointer;
       font-weight: 750;
     }
-    .btn:hover{ filter: brightness(1.06); }
+
+    .btn:hover{
+      filter: brightness(1.06);
+    }
+
     .btn.primary{
       background: linear-gradient(135deg, rgba(124,58,237,.95), rgba(34,197,94,.75));
       border-color: rgba(255,255,255,.16);
@@ -91,11 +131,20 @@
       box-shadow: var(--shadow);
     }
 
-    .hero{ padding: 56px 0 24px; }
-    .hero-main{ padding: 28px; overflow: hidden; position: relative; }
+    .hero{
+      padding: 56px 0 24px;
+    }
+
+    .hero-main{
+      padding: 28px;
+      overflow: hidden;
+      position: relative;
+    }
+
     .hero-main::after{
       content: "";
-      position: absolute; inset: -2px;
+      position: absolute;
+      inset: -2px;
       background: radial-gradient(600px 250px at 20% 0%, rgba(124,58,237,.28), transparent 70%);
       pointer-events: none;
     }
@@ -106,6 +155,7 @@
       line-height: 1.1;
       letter-spacing: -.5px;
     }
+
     .subtitle{
       margin: 0 0 18px;
       color: var(--muted);
@@ -115,70 +165,150 @@
       z-index: 1;
     }
 
-    .chips{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; position: relative; z-index: 1; }
+    .chips{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
     .chip{
-      padding: 8px 10px; border-radius: 999px;
+      padding: 8px 10px;
+      border-radius: 999px;
       background: rgba(255,255,255,.06);
       border: 1px solid var(--line);
       color: var(--muted);
       font-size: 13px;
     }
-    .chip strong{ color: var(--text); }
 
-    .section{ padding: 22px 0; }
-    .section h2{ margin: 0 0 10px; font-size: 22px; letter-spacing: -.2px; }
-    .section p{ margin: 0 0 14px; color: var(--muted); max-width: 90ch; }
-
-    .grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    @media (max-width: 980px){
-      .grid-3{ grid-template-columns: 1fr; }
-      .nav{ flex-direction: column; align-items:flex-start; }
-      .navlinks{ justify-content:flex-start; }
+    .chip strong{
+      color: var(--text);
     }
 
-    .panel{ padding: 18px; }
-    .panel h3{ margin: 0 0 6px; font-size: 16px; letter-spacing: -.1px; }
-    .small{ font-size: 13px; color: var(--muted); }
+    .section{
+      padding: 22px 0;
+    }
 
-    ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
-    li{ margin: 6px 0; }
+    .section h2{
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -.2px;
+    }
 
-    .two-col{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    @media (max-width: 980px){ .two-col{ grid-template-columns: 1fr; } }
+    .section p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      max-width: 90ch;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 980px){
+      .grid-3{
+        grid-template-columns: 1fr;
+      }
+
+      .nav{
+        flex-direction: column;
+        align-items:flex-start;
+      }
+
+      .navlinks{
+        justify-content:flex-start;
+      }
+    }
+
+    .panel{
+      padding: 18px;
+    }
+
+    .panel h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+      letter-spacing: -.1px;
+    }
+
+    .small{
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 980px){
+      .two-col{
+        grid-template-columns: 1fr;
+      }
+    }
 
     .callout{
-      display:grid; grid-template-columns: 32px 1fr;
-      gap: 12px; align-items: start;
+      display:grid;
+      grid-template-columns: 32px 1fr;
+      gap: 12px;
+      align-items: start;
       padding: 16px;
       border-radius: 16px;
       border: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
     }
+
     .callout .icon{
-      width: 32px; height: 32px;
+      width: 32px;
+      height: 32px;
       border-radius: 10px;
-      display:grid; place-items:center;
+      display:grid;
+      place-items:center;
       background: rgba(255,255,255,.08);
       border: 1px solid var(--line);
     }
 
     .steps{
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       list-style: none;
       display: grid;
       gap: 10px;
     }
+
     .step{
       padding: 14px;
       border-radius: 16px;
       border: 1px solid var(--line);
       background: rgba(255,255,255,.045);
     }
+
     .step .top{
-      display:flex; align-items:center; justify-content:space-between; gap: 10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
       margin-bottom: 6px;
     }
-    .step .top .title{ font-weight: 750; }
+
+    .step .top .title{
+      font-weight: 750;
+    }
+
     .step .top .tag{
       font-size: 12px;
       padding: 6px 10px;
@@ -188,43 +318,19 @@
       background: rgba(255,255,255,.04);
       white-space: nowrap;
     }
-<section class="section" id="juego">
-  <h2>🎮 Pon a prueba lo aprendido</h2>
 
-  <p>
-    Ahora podés poner a prueba tus conocimientos sobre la sensibilidad auditiva,
-    el autismo y la importancia de crear espacios escolares más tranquilos e inclusivos.
-  </p>
+    /* ====== JUEGO EDUCAPLAY ====== */
 
-  <div class="card panel">
-    <div style="
-      position: relative;
-      width: 100%;
-      max-width: 795px;
-      margin: 0 auto;
+    #juego .panel{
       overflow: hidden;
-      border-radius: 14px;
-      background: #000;
-    ">
-      <iframe
-        src="https://es.educaplay.com/juego/30944045-escuchar_para_incluir_sensibilidad_auditiva.html"
-        title="Juego interactivo: Escuchar para Incluir"
-        allow="fullscreen; autoplay; allow-top-navigation-by-user-activation"
-        allowfullscreen
-        width="795"
-        height="690"
-        frameborder="0"
-        style="display:block; width:100%; min-height:690px; border:0;">
-      </iframe>
-    </div>
+    }
 
-    <p class="small" style="margin-top:12px; text-align:center;">
-      🎯 Actividad interactiva sobre el cuidado de la sensibilidad auditiva
-      y la inclusión de personas con autismo.
-    </p>
-  </div>
-</section>
+    #juego iframe{
+      max-width: 100%;
+    }
+
     /* ====== VIDEO ====== */
+
     .video-wrap{
       position: relative;
       width: 100%;
@@ -233,6 +339,7 @@
       border-radius: 14px;
       background: #000;
     }
+
     .video-wrap iframe{
       position: absolute;
       inset: 0;
@@ -242,17 +349,23 @@
     }
 
     /* ====== ANEXOS ====== */
+
     .annex{
       display: block;
       color: var(--text);
       text-decoration: none;
       transition: transform .2s ease, background .2s ease;
     }
+
     .annex:hover{
       transform: translateY(-3px);
       background: rgba(255,255,255,.10);
     }
-    .annex h3{ margin-bottom: 8px; }
+
+    .annex h3{
+      margin-bottom: 8px;
+    }
+
     .annex .open{
       display: inline-block;
       margin-top: 10px;
@@ -262,57 +375,96 @@
     }
 
     /* ====== PÓSTER ====== */
-    .poster {
+
+    .poster{
       display: none;
       padding: 20px;
     }
+
     .poster .poster-card{
       padding: 22px;
     }
+
     .poster h2{
       margin: 0 0 10px;
       font-size: 24px;
       letter-spacing: -.2px;
     }
+
     .poster .poster-grid{
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
       margin-top: 12px;
     }
+
     .poster .bigline{
       border: 1px solid var(--line);
       background: rgba(255,255,255,.04);
       border-radius: 16px;
       padding: 14px;
     }
-    .poster .bigline strong{ color: var(--text); }
+
+    .poster .bigline strong{
+      color: var(--text);
+    }
+
     .poster .mini{
       color: var(--muted);
       font-size: 13px;
       margin: 0;
     }
+
     @media (max-width: 980px){
-      .poster .poster-grid{ grid-template-columns: 1fr; }
+      .poster .poster-grid{
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Toggle state: cuando está en modo póster */
-    body[data-mode="poster"] header { position: static; }
-    body[data-mode="poster"] main.container { display: none; }
-    body[data-mode="poster"] .poster { display: block; }
 
-    /* ====== Impresión (póster) ====== */
+    body[data-mode="poster"] header{
+      position: static;
+    }
+
+    body[data-mode="poster"] main.container{
+      display: none;
+    }
+
+    body[data-mode="poster"] .poster{
+      display: block;
+    }
+
+    /* ====== IMPRESIÓN ====== */
+
     @media print{
-      header { display: none !important; }
-      main.container { display: none !important; }
-      .poster { display: block !important; }
-      body { background: white; color: #111827; }
-      .card, .poster .bigline {
+      header{
+        display: none !important;
+      }
+
+      main.container{
+        display: none !important;
+      }
+
+      .poster{
+        display: block !important;
+      }
+
+      body{
+        background: white;
+        color: #111827;
+      }
+
+      .card,
+      .poster .bigline{
         box-shadow: none !important;
         background: white !important;
         border-color: #e5e7eb !important;
       }
-      .mini { color: #374151 !important; }
+
+      .mini{
+        color: #374151 !important;
+      }
     }
 
     .footer{
@@ -322,20 +474,31 @@
       color: var(--muted);
       font-size: 13px;
     }
-    .underline{ text-decoration: underline; text-decoration-thickness: 2px; color: inherit; }
+
+    .underline{
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      color: inherit;
+    }
   </style>
 </head>
 
 <body data-mode="web">
+
   <header>
     <nav class="nav" aria-label="Navegación principal">
+
       <div class="brand">
         <div class="logo" aria-hidden="true">🔊</div>
+
         <div>
           <div style="font-size:14px; color: rgba(238,242,255,.75); font-weight:700;">
             Centro Educativo Departamental Municipal de Ñemby
           </div>
-          <div style="font-size:16px;">Menos ruido, más aprendizaje</div>
+
+          <div style="font-size:16px;">
+            Menos ruido, más aprendizaje
+          </div>
         </div>
       </div>
 
@@ -345,6 +508,7 @@
         <a href="#autismo">Autismo & cuidado</a>
         <a href="#roles">Qué puede hacer cada rol</a>
         <a href="#propuestas">Propuestas</a>
+        <a href="#juego">🎮 Juego interactivo</a>
         <a href="#video">Video referente</a>
         <a href="#anexos">Anexos</a>
         <a href="#referencias">Referencias</a>
@@ -352,6 +516,7 @@
         <button class="btn primary" id="togglePoster" type="button" title="Cambiar a modo póster">
           🧾 Modo póster
         </button>
+
         <button class="btn" id="printPoster" type="button" title="Imprimir póster">
           🖨️ Imprimir
         </button>
@@ -359,15 +524,25 @@
     </nav>
   </header>
 
+
   <!-- ====== SITIO NORMAL ====== -->
+
   <main class="container">
+
     <section class="hero" id="inicio">
       <div class="card hero-main">
-        <h1>Reducir el ruido en el aula es salud, aprendizaje e inclusión.</h1>
+
+        <h1>
+          Reducir el ruido en el aula es salud, aprendizaje e inclusión.
+        </h1>
+
         <p class="subtitle">
-          Este sitio busca fomentar el entendimiento sobre la <strong>polución sonora dentro de las aulas</strong>,
-          concientizar sobre el <strong>cuidado de la percepción auditiva</strong> y promover un entorno más accesible
-          para <strong>personas con autismo</strong> y otras sensibilidades sensoriales en el
+          Este sitio busca fomentar el entendimiento sobre la
+          <strong>polución sonora dentro de las aulas</strong>,
+          concientizar sobre el
+          <strong>cuidado de la percepción auditiva</strong>
+          y promover un entorno más accesible para
+          <strong>personas con autismo</strong> y otras sensibilidades sensoriales en el
           <strong>Centro Educativo Departamental Municipal de Ñemby</strong>.
         </p>
 
@@ -377,20 +552,30 @@
           <span class="chip"><strong>Beneficia:</strong> todo el curso</span>
           <span class="chip"><strong>Claves:</strong> hábitos + organización</span>
         </div>
+
       </div>
     </section>
 
+
     <section class="section" id="problema">
+
       <h2>¿Cuál es el problema?</h2>
+
       <p>
-        En muchos centros educativos, el ruido elevado se normaliza. Sin embargo, el ruido en el aula y en los espacios
-        comunes puede afectar la concentración, aumentar el estrés y disminuir el bienestar general.
+        En muchos centros educativos, el ruido elevado se normaliza. Sin embargo,
+        el ruido en el aula y en los espacios comunes puede afectar la concentración,
+        aumentar el estrés y disminuir el bienestar general.
       </p>
 
       <div class="grid-3">
+
         <div class="card panel">
           <h3>Ruido constante</h3>
-          <p class="small">El cerebro hace un esfuerzo extra para filtrar sonidos y comprender la voz del docente.</p>
+
+          <p class="small">
+            El cerebro hace un esfuerzo extra para filtrar sonidos y comprender la voz del docente.
+          </p>
+
           <ul>
             <li>Interrumpe el foco</li>
             <li>Fatiga mental</li>
@@ -398,9 +583,14 @@
           </ul>
         </div>
 
+
         <div class="card panel">
           <h3>Picos de ruido</h3>
-          <p class="small">Los picos suelen aumentar en recreos, pasillos y transiciones.</p>
+
+          <p class="small">
+            Los picos suelen aumentar en recreos, pasillos y transiciones.
+          </p>
+
           <ul>
             <li>Estrés y cansancio</li>
             <li>Retorno a clase más difícil</li>
@@ -408,63 +598,93 @@
           </ul>
         </div>
 
+
         <div class="card panel">
           <h3>Impacto desigual</h3>
-          <p class="small">No todas las personas procesan el sonido igual: algunas sensibilidades requieren ajustes.</p>
+
+          <p class="small">
+            No todas las personas procesan el sonido igual: algunas sensibilidades requieren ajustes.
+          </p>
+
           <ul>
             <li>Sobreestimulación</li>
             <li>Ansiedad</li>
             <li>Necesidad de espacios calmados</li>
           </ul>
         </div>
+
       </div>
     </section>
 
+
     <section class="section" id="impacto">
+
       <h2>Daño y cuidado de la percepción auditiva</h2>
+
       <p>
-        La exposición repetida a ambientes ruidosos puede causar <strong>fatiga auditiva</strong> y malestar.
-        Además, el impacto no es solo “oír menos”: también puede ser <strong>entender peor</strong> y rendir menos
-        por el esfuerzo constante de atención.
+        La exposición repetida a ambientes ruidosos puede causar
+        <strong>fatiga auditiva</strong> y malestar.
+        Además, el impacto no es solo “oír menos”: también puede ser
+        <strong>entender peor</strong> y rendir menos por el esfuerzo constante de atención.
       </p>
 
       <div class="two-col">
+
         <div class="card panel">
+
           <h3>Señales de alerta (observables)</h3>
+
           <ul>
             <li>Dolor de cabeza o irritabilidad después de clases</li>
             <li>Dificultad para seguir instrucciones orales</li>
             <li>Cansancio o necesidad de silencio</li>
             <li>Molestia ante sonidos cotidianos (sillas, gritos, timbre)</li>
           </ul>
+
         </div>
 
+
         <div class="card panel">
+
           <h3>Objetivo de cuidado</h3>
+
           <div class="callout">
+
             <div class="icon" aria-hidden="true">🛡️</div>
+
             <div>
-              <strong>Prevenir</strong> el exceso de ruido para proteger el bienestar, facilitar el aprendizaje y reducir el estrés.
+              <strong>Prevenir</strong> el exceso de ruido para proteger el bienestar,
+              facilitar el aprendizaje y reducir el estrés.
+
               <div class="small" style="margin-top:6px;">
-                El foco es construir hábitos de convivencia sonora: voz moderada, transiciones calmadas y espacios más amigables.
+                El foco es construir hábitos de convivencia sonora:
+                voz moderada, transiciones calmadas y espacios más amigables.
               </div>
             </div>
+
           </div>
         </div>
+
       </div>
     </section>
 
+
     <section class="section" id="autismo">
+
       <h2>Autismo y sensibilidad auditiva: cuidado e inclusión</h2>
+
       <p>
-        Algunas personas autistas presentan <strong>hipersensibilidad sensorial</strong>. En esos casos, ciertos ruidos
-        pueden percibirse como demasiado intensos o dolorosos, desencadenando <strong>sobrecarga sensorial</strong>.
+        Algunas personas autistas presentan <strong>hipersensibilidad sensorial</strong>.
+        En esos casos, ciertos ruidos pueden percibirse como demasiado intensos o dolorosos,
+        desencadenando <strong>sobrecarga sensorial</strong>.
         Reducir el ruido es una medida concreta de <strong>accesibilidad</strong> y respeto.
       </p>
 
       <div class="grid-3">
+
         <div class="card panel">
           <h3>¿Qué puede pasar?</h3>
+
           <ul>
             <li>Ansiedad o bloqueo</li>
             <li>Necesidad de retirarse para regularse</li>
@@ -473,8 +693,10 @@
           </ul>
         </div>
 
+
         <div class="card panel">
           <h3>Qué ayuda (sin exponer a nadie)</h3>
+
           <ul>
             <li>Rutinas predecibles</li>
             <li>Transiciones con menos ruido</li>
@@ -483,31 +705,48 @@
           </ul>
         </div>
 
+
         <div class="card panel">
+
           <h3>Mensaje clave</h3>
+
           <div class="callout">
+
             <div class="icon" aria-hidden="true">🤝</div>
+
             <div>
               <strong>La inclusión beneficia a todo el curso.</strong>
+
               <div class="small" style="margin-top:6px;">
-                Un aula con menos ruido mejora comprensión, convivencia y bienestar para todas las personas.
+                Un aula con menos ruido mejora comprensión,
+                convivencia y bienestar para todas las personas.
               </div>
             </div>
+
           </div>
+
         </div>
+
       </div>
     </section>
 
-    <!-- ✅ NUEVO: ROLES -->
+
+    <!-- ====== ROLES ====== -->
+
     <section class="section" id="roles">
+
       <h2>Qué puede hacer cada rol</h2>
+
       <p>
-        Reducir el ruido es un trabajo en equipo. Estas acciones son realistas, de bajo costo y aplicables sin señalar a nadie.
+        Reducir el ruido es un trabajo en equipo.
+        Estas acciones son realistas, de bajo costo y aplicables sin señalar a nadie.
       </p>
 
       <div class="grid-3">
+
         <div class="card panel">
           <h3>Docentes</h3>
+
           <ul>
             <li>Definir “niveles de voz” (1/5, 2/5) y practicarlos.</li>
             <li>Hacer transiciones guiadas (2 minutos) al volver del recreo.</li>
@@ -517,8 +756,10 @@
           </ul>
         </div>
 
+
         <div class="card panel">
           <h3>Estudiantes</h3>
+
           <ul>
             <li>Respetar “zonas de voz baja” en pasillos y entrada al aula.</li>
             <li>Evitar gritos cerca de puertas/ventanas de otras clases.</li>
@@ -528,8 +769,10 @@
           </ul>
         </div>
 
+
         <div class="card panel">
           <h3>Directivos y familias</h3>
+
           <ul>
             <li>Apoyar señalética y normas claras (consistentes en toda la institución).</li>
             <li>Organizar recreos por sectores/turnos si se puede.</li>
@@ -538,185 +781,419 @@
             <li>Escuchar necesidades individuales y acordar apoyos discretos.</li>
           </ul>
         </div>
+
       </div>
+
 
       <div class="card panel" style="margin-top:14px;">
+
         <div class="callout">
+
           <div class="icon" aria-hidden="true">✅</div>
+
           <div>
-            <strong>Regla de oro:</strong> bajar el ruido no es “castigo”; es salud y accesibilidad.
+            <strong>Regla de oro:</strong>
+            bajar el ruido no es “castigo”; es salud y accesibilidad.
+
             <div class="small" style="margin-top:6px;">
-              Las estrategias deben aplicarse a todo el grupo y sostenerse con rutina, no con regaños.
+              Las estrategias deben aplicarse a todo el grupo y sostenerse con rutina,
+              no con regaños.
             </div>
           </div>
+
         </div>
+
       </div>
+
     </section>
 
+
     <section class="section" id="propuestas">
+
       <h2>Propuestas de bajo costo (acciones concretas)</h2>
+
       <p>
-        Medidas simples de organización y hábitos pueden reducir el ruido sin necesidad de grandes inversiones.
-        Estas acciones se pueden aplicar por etapas.
+        Medidas simples de organización y hábitos pueden reducir el ruido sin necesidad
+        de grandes inversiones. Estas acciones se pueden aplicar por etapas.
       </p>
 
       <ol class="steps">
+
         <li class="step">
           <div class="top">
             <span class="title">Zonas de voz baja + señalética</span>
             <span class="tag">rápido</span>
           </div>
-          <div class="small">Carteles en pasillos y entrada del aula (“Voz 1/5”). Practicar como rutina.</div>
+          <div class="small">
+            Carteles en pasillos y entrada del aula (“Voz 1/5”). Practicar como rutina.
+          </div>
         </li>
+
 
         <li class="step">
           <div class="top">
             <span class="title">Transición calmada al volver del recreo</span>
             <span class="tag">rutina</span>
           </div>
-          <div class="small">Implementar “2 minutos de transición” (respirar, agua, orden) antes de iniciar la clase.</div>
+          <div class="small">
+            Implementar “2 minutos de transición” (respirar, agua, orden) antes de iniciar la clase.
+          </div>
         </li>
+
 
         <li class="step">
           <div class="top">
             <span class="title">Recreo por sectores o turnos</span>
             <span class="tag">organización</span>
           </div>
-          <div class="small">Reducir aglomeración y eco: organizar zonas o turnos para bajar picos de ruido.</div>
+          <div class="small">
+            Reducir aglomeración y eco: organizar zonas o turnos para bajar picos de ruido.
+          </div>
         </li>
+
 
         <li class="step">
           <div class="top">
             <span class="title">Reducir ruido de mobiliario</span>
             <span class="tag">bajo costo</span>
           </div>
-          <div class="small">Colocar fieltro/goma en patas de sillas y mesas. Disminuye arrastres y golpes.</div>
+          <div class="small">
+            Colocar fieltro/goma en patas de sillas y mesas. Disminuye arrastres y golpes.
+          </div>
         </li>
+
 
         <li class="step">
           <div class="top">
             <span class="title">Pausa de regulación sensorial</span>
             <span class="tag">1–2 min</span>
           </div>
-          <div class="small">Micro-pausas dentro de la clase (estirar, respiración). Útil para todo el grupo.</div>
+          <div class="small">
+            Micro-pausas dentro de la clase (estirar, respiración). Útil para todo el grupo.
+          </div>
         </li>
+
 
         <li class="step">
           <div class="top">
             <span class="title">Apoyo individual (acordado y respetuoso)</span>
             <span class="tag">inclusión</span>
           </div>
+
           <div class="small">
-            Opciones sin señalar a nadie: ubicación más tranquila, permiso de pausa breve, “lugar de calma” acordado.
+            Opciones sin señalar a nadie: ubicación más tranquila,
+            permiso de pausa breve, “lugar de calma” acordado.
           </div>
         </li>
+
       </ol>
+
     </section>
 
+
+    <!-- ====== JUEGO EDUCAPLAY ====== -->
+
+    <section class="section" id="juego">
+
+      <h2>🎮 Pon a prueba lo aprendido</h2>
+
+      <p>
+        Ahora podés poner a prueba tus conocimientos sobre la sensibilidad auditiva,
+        el autismo y la importancia de crear espacios escolares más tranquilos e inclusivos.
+      </p>
+
+      <div class="card panel">
+
+        <div style="
+          position: relative;
+          width: 100%;
+          max-width: 795px;
+          margin: 0 auto;
+          overflow: hidden;
+          border-radius: 14px;
+          background: #000;
+        ">
+
+          <iframe
+            src="https://es.educaplay.com/juego/30944045-escuchar_para_incluir_sensibilidad_auditiva.html"
+            title="Juego interactivo: Escuchar para Incluir"
+            allow="fullscreen; autoplay; allow-top-navigation-by-user-activation"
+            allowfullscreen
+            width="795"
+            height="690"
+            frameborder="0"
+            style="display:block; width:100%; min-height:690px; border:0;">
+          </iframe>
+
+        </div>
+
+        <p class="small" style="margin-top:12px; text-align:center;">
+          🎯 Actividad interactiva sobre el cuidado de la sensibilidad auditiva
+          y la inclusión de personas con autismo.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ====== VIDEO ====== -->
+
     <section class="section" id="video">
+
       <h2>Video referente</h2>
+
       <p>
         Este video ayuda a comprender la importancia de reducir la polución sonora
         y crear espacios educativos más saludables e inclusivos.
       </p>
+
       <div class="card panel">
+
         <div class="video-wrap">
+
           <iframe
             src="https://www.youtube.com/embed/xHuKrbwFjuc"
             title="Video referente sobre contaminación sonora e inclusión"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
           </iframe>
+
         </div>
+
         <p class="small" style="margin-top:10px;">
-          ¿No se reproduce? <a class="underline" href="https://youtu.be/xHuKrbwFjuc" target="_blank" rel="noopener">Ver en YouTube</a>
+          ¿No se reproduce?
+          <a
+            class="underline"
+            href="https://youtu.be/xHuKrbwFjuc"
+            target="_blank"
+            rel="noopener">
+            Ver en YouTube
+          </a>
         </p>
+
       </div>
+
     </section>
+
+
+    <!-- ====== ANEXOS ====== -->
 
     <section class="section" id="anexos">
+
       <h2>Anexos</h2>
+
       <p>
-        Imágenes complementarias del proyecto sobre polución sonora, percepción auditiva e inclusión.
+        Imágenes complementarias del proyecto sobre polución sonora,
+        percepción auditiva e inclusión.
       </p>
+
       <div class="grid-3">
-        <a class="card panel annex" href="https://share.google/hun9TwlbfEA51Sp2L" target="_blank" rel="noopener">
+
+        <a
+          class="card panel annex"
+          href="https://share.google/hun9TwlbfEA51Sp2L"
+          target="_blank"
+          rel="noopener">
+
           <h3>🖼️ Anexo 1</h3>
-          <p class="small">Imagen de referencia del proyecto.</p>
-          <span class="open">Ver imagen →</span>
+
+          <p class="small">
+            Imagen de referencia del proyecto.
+          </p>
+
+          <span class="open">
+            Ver imagen →
+          </span>
+
         </a>
-        <a class="card panel annex" href="https://share.google/jegC7eQwqoEy7r3KB" target="_blank" rel="noopener">
+
+
+        <a
+          class="card panel annex"
+          href="https://share.google/jegC7eQwqoEy7r3KB"
+          target="_blank"
+          rel="noopener">
+
           <h3>🖼️ Anexo 2</h3>
-          <p class="small">Imagen de referencia del proyecto.</p>
-          <span class="open">Ver imagen →</span>
+
+          <p class="small">
+            Imagen de referencia del proyecto.
+          </p>
+
+          <span class="open">
+            Ver imagen →
+          </span>
+
         </a>
-        <a class="card panel annex" href="https://share.google/vSCJBIA7eHOH52MDl" target="_blank" rel="noopener">
+
+
+        <a
+          class="card panel annex"
+          href="https://share.google/vSCJBIA7eHOH52MDl"
+          target="_blank"
+          rel="noopener">
+
           <h3>🖼️ Anexo 3</h3>
-          <p class="small">Imagen de referencia del proyecto.</p>
-          <span class="open">Ver imagen →</span>
+
+          <p class="small">
+            Imagen de referencia del proyecto.
+          </p>
+
+          <span class="open">
+            Ver imagen →
+          </span>
+
         </a>
+
       </div>
+
     </section>
 
+
+    <!-- ====== REFERENCIAS ====== -->
+
     <section class="section" id="referencias">
+
       <h2>Referencias</h2>
-      <p>Agregá aquí tu webgrafía (OMS, artículos, etc.) con enlaces y fecha de consulta.</p>
+
+      <p>
+        Agregá aquí tu webgrafía (OMS, artículos, etc.) con enlaces y fecha de consulta.
+      </p>
+
       <div class="card panel">
+
         <ul>
           <li>Organización Mundial de la Salud (OMS). Recomendaciones sobre ruido y salud.</li>
           <li>Lecturas sobre bienestar en aulas y sensibilidad sensorial.</li>
         </ul>
+
       </div>
+
     </section>
 
+
+    <!-- ====== PIE DE PÁGINA ====== -->
+
     <footer class="footer">
-      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;">
+
+      <div style="
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+        align-items:center;
+        justify-content:space-between;
+      ">
+
         <div>
-          <strong>Centro Educativo Departamental Municipal de Ñemby</strong>NLBR
-          <span class="small">Sitio educativo para concientización y propuestas de bajo costo.</span>
+
+          <strong>
+            Centro Educativo Departamental Municipal de Ñemby
+          </strong>
+
+          <span class="small">
+            Sitio educativo para concientización y propuestas de bajo costo.
+          </span>
+
         </div>
+
         <div class="small">
-          <a class="underline" href="#inicio">Volver arriba</a>
+
+          <a class="underline" href="#inicio">
+            Volver arriba
+          </a>
+
         </div>
+
       </div>
+
     </footer>
+
   </main>
 
-  <!-- ✅ NUEVO: MODO PÓSTER (una sola pantalla) -->
+
+  <!-- ====== MODO PÓSTER ====== -->
+
   <section class="poster" id="poster" aria-label="Modo póster">
+
     <div class="card poster-card">
-      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;">
+
+      <div style="
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+        align-items:center;
+        justify-content:space-between;
+      ">
+
         <div>
-          <div class="small" style="font-weight:800; letter-spacing:.2px; color: rgba(238,242,255,.8);">
+
+          <div
+            class="small"
+            style="
+              font-weight:800;
+              letter-spacing:.2px;
+              color: rgba(238,242,255,.8);
+            ">
             Centro Educativo Departamental Municipal de Ñemby
           </div>
-          <h2 style="margin:4px 0 0;">Menos ruido, más aprendizaje</h2>
+
+          <h2 style="margin:4px 0 0;">
+            Menos ruido, más aprendizaje
+          </h2>
+
           <p class="mini" style="max-width: 95ch;">
-            Reducir el ruido mejora salud auditiva, convivencia y aprendizaje; y hace el aula más accesible para personas con autismo y sensibilidades sensoriales.
+            Reducir el ruido mejora salud auditiva, convivencia y aprendizaje;
+            y hace el aula más accesible para personas con autismo
+            y sensibilidades sensoriales.
           </p>
+
         </div>
 
-        <div style="display:flex; gap:10px; align-items:center;">
-          <button class="btn" id="backToWeb" type="button">← Volver al sitio</button>
-          <button class="btn primary" id="printPoster2" type="button">🖨️ Imprimir póster</button>
+
+        <div style="
+          display:flex;
+          gap:10px;
+          align-items:center;
+        ">
+
+          <button class="btn" id="backToWeb" type="button">
+            ← Volver al sitio
+          </button>
+
+          <button class="btn primary" id="printPoster2" type="button">
+            🖨️ Imprimir póster
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="poster-grid">
+
         <div class="bigline">
+
           <strong>¿Por qué importa?</strong>
+
           <p class="mini" style="margin-top:6px;">
-            El ruido puede aumentar estrés y dificultar la comprensión oral. En algunas personas (p. ej., autismo) puede provocar sobrecarga sensorial.
+            El ruido puede aumentar estrés y dificultar la comprensión oral.
+            En algunas personas (p. ej., autismo) puede provocar sobrecarga sensorial.
           </p>
+
           <ul>
             <li>Mejor comprensión</li>
             <li>Menos estrés</li>
             <li>Más inclusión</li>
           </ul>
+
         </div>
 
+
         <div class="bigline">
+
           <strong>Qué ayuda (sin costo alto)</strong>
+
           <ul>
             <li>Zonas de voz baja + señalética</li>
             <li>Transiciones calmadas al volver del recreo</li>
@@ -724,32 +1201,60 @@
             <li>Fieltro/goma en sillas (menos arrastre)</li>
             <li>Pausas breves de regulación</li>
           </ul>
+
         </div>
 
+
         <div class="bigline">
+
           <strong>Qué puede hacer cada rol</strong>
+
           <ul>
-            <li><strong>Docentes:</strong> rutinas, señales visuales, transiciones.</li>
-            <li><strong>Estudiantes:</strong> respetar voz baja, no gritar en pasillos, cuidar sillas.</li>
-            <li><strong>Directivos/Familias:</strong> apoyar normas, organización, pequeñas mejoras.</li>
+            <li>
+              <strong>Docentes:</strong>
+              rutinas, señales visuales, transiciones.
+            </li>
+
+            <li>
+              <strong>Estudiantes:</strong>
+              respetar voz baja, no gritar en pasillos, cuidar sillas.
+            </li>
+
+            <li>
+              <strong>Directivos/Familias:</strong>
+              apoyar normas, organización, pequeñas mejoras.
+            </li>
           </ul>
+
         </div>
 
+
         <div class="bigline">
+
           <strong>Mensaje final</strong>
+
           <p class="mini" style="margin-top:6px;">
-            Bajar el ruido no es castigo: es salud y accesibilidad. Un aula más tranquila beneficia a todas las personas.
+            Bajar el ruido no es castigo: es salud y accesibilidad.
+            Un aula más tranquila beneficia a todas las personas.
           </p>
+
           <div class="mini" style="margin-top:10px;">
-            Sugerencia: colocá este póster en pasillos/aulas y reforzá las rutinas por 2–3 semanas.
+            Sugerencia: colocá este póster en pasillos/aulas y reforzá
+            las rutinas por 2–3 semanas.
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
+
 
   <script>
     (function(){
+
       const body = document.body;
 
       const togglePoster = document.getElementById("togglePoster");
@@ -757,36 +1262,88 @@
       const backToWeb = document.getElementById("backToWeb");
       const printPoster2 = document.getElementById("printPoster2");
 
+
       function setMode(mode){
+
         body.setAttribute("data-mode", mode);
+
         if (mode === "poster") {
-          // Lleva al inicio del póster
+
           const el = document.getElementById("poster");
-          if (el) el.scrollIntoView({behavior:"smooth", block:"start"});
+
+          if (el) {
+            el.scrollIntoView({
+              behavior:"smooth",
+              block:"start"
+            });
+          }
+
         } else {
+
           const el = document.getElementById("inicio");
-          if (el) el.scrollIntoView({behavior:"smooth", block:"start"});
+
+          if (el) {
+            el.scrollIntoView({
+              behavior:"smooth",
+              block:"start"
+            });
+          }
+
         }
+
       }
+
 
       togglePoster?.addEventListener("click", () => {
-        const isPoster = body.getAttribute("data-mode") === "poster";
-        setMode(isPoster ? "web" : "poster");
+
+        const isPoster =
+          body.getAttribute("data-mode") === "poster";
+
+        setMode(
+          isPoster ? "web" : "poster"
+        );
+
       });
 
-      backToWeb?.addEventListener("click", () => setMode("web"));
+
+      backToWeb?.addEventListener(
+        "click",
+        () => setMode("web")
+      );
+
 
       function printAsPoster(){
-        // Fuerza modo póster para impresión
-        const prev = body.getAttribute("data-mode");
-        body.setAttribute("data-mode", "poster");
+
+        const prev =
+          body.getAttribute("data-mode");
+
+        body.setAttribute(
+          "data-mode",
+          "poster"
+        );
+
         window.print();
-        body.setAttribute("data-mode", prev || "web");
+
+        body.setAttribute(
+          "data-mode",
+          prev || "web"
+        );
+
       }
 
-      printPoster?.addEventListener("click", printAsPoster);
-      printPoster2?.addEventListener("click", printAsPoster);
+
+      printPoster?.addEventListener(
+        "click",
+        printAsPoster
+      );
+
+      printPoster2?.addEventListener(
+        "click",
+        printAsPoster
+      );
+
     })();
   </script>
+
 </body>
 </html>
